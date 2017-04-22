@@ -1,0 +1,17 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/action_share"
+        android:orderInCategory="100"
+        android:title="Share this app"/>
+    <item
+        android:id="@+id/action_rate_us"
+        android:orderInCategory="100"
+        android:title="Rate app on Google Play"/>
+    <item
+        android:id="@+id/action_privacy_policy"
+        android:orderInCategory="100"
+        android:title="Privacy Policy"/>
+
+</menu>
