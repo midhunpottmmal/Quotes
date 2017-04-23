@@ -15,6 +15,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Toast;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collections;
 
@@ -26,6 +27,9 @@ public class QuotesCardActivity extends AppCompatActivity {
 
     private ArrayList countries;
     private Toolbar toolbar;
+    RecyclerView recyclerView;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,17 +41,20 @@ public class QuotesCardActivity extends AppCompatActivity {
 
         toolbar = (Toolbar) findViewById(R.id.main_app_bar);
         setSupportActionBar(toolbar);
+        setTitle((String)bundle.get("categoryTitle"));
         initViews(quoteList);
+
+
     }
 
     private void initViews(ArrayList<Quote> quoteList) {
-        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.card_recycler_view);
+        recyclerView = (RecyclerView) findViewById(R.id.card_recycler_view);
         recyclerView.setHasFixedSize(true);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());
         recyclerView.setLayoutManager(layoutManager);
 
 
-        RecyclerView.Adapter adapter = new DataAdapter(quoteList);
+        RecyclerView.Adapter adapter = new DataAdapter(quoteList,getApplicationContext());
         recyclerView.setAdapter(adapter);
 
         recyclerView.addOnItemTouchListener(new RecyclerView.OnItemTouchListener() {
@@ -66,12 +73,13 @@ public class QuotesCardActivity extends AppCompatActivity {
                 View child = rv.findChildViewUnder(e.getX(), e.getY());
                 if (child != null && gestureDetector.onTouchEvent(e)) {
                     int position = rv.getChildAdapterPosition(child);
-                    Toast.makeText(getApplicationContext(),"Please share this app with 3 contacts help us to grow :)", Toast.LENGTH_SHORT).show();
 
                 }
 
                 return false;
             }
+
+
 
             @Override
             public void onTouchEvent(RecyclerView rv, MotionEvent e) {

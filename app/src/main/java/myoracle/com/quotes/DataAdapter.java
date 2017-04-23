@@ -1,10 +1,16 @@
 package myoracle.com.quotes;
 
+import android.content.ClipData;
+import android.content.ClipboardManager;
+import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -15,15 +21,18 @@ import java.util.Collections;
 
 public class DataAdapter extends RecyclerView.Adapter<DataAdapter.ViewHolder> {
     private ArrayList<Quote> quoteList;
+    private Context applicationContext;
 
-    public DataAdapter(ArrayList<Quote> quoteList) {
+    public DataAdapter(ArrayList<Quote> quoteList, Context applicationContext) {
         this.quoteList = quoteList;
+        this.applicationContext = applicationContext;
     }
 
     @Override
     public DataAdapter.ViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
         View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.quotes_card_cell, viewGroup, false);
         return new ViewHolder(view);
+
 
     }
 
@@ -32,6 +41,34 @@ public class DataAdapter extends RecyclerView.Adapter<DataAdapter.ViewHolder> {
 
         viewHolder.tv_country.setText(this.quoteList.get(i).getQuote());
         viewHolder.qt_qu.setText(this.quoteList.get(i).getAuthor());
+        final String qt = this.quoteList.get(i).getAuthor();
+        final String au = this.quoteList.get(i).getAuthor();
+        viewHolder.copy.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+
+                ClipboardManager clipboard = (ClipboardManager) applicationContext.getSystemService(Context.CLIPBOARD_SERVICE);
+                ClipData clip = ClipData.newPlainText(au,qt);
+                clipboard.setPrimaryClip(clip);
+                Toast.makeText(applicationContext,"Copied",Toast.LENGTH_SHORT).show();
+
+            }
+        });
+
+        viewHolder.share.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                Intent sendIntent = new Intent();
+                sendIntent.setAction(Intent.ACTION_SEND);
+                sendIntent.putExtra(Intent.EXTRA_TEXT,qt);
+                sendIntent.setType("text/plain");
+                Intent.createChooser(sendIntent, "Share via");
+                applicationContext.startActivity(sendIntent);
+            }
+        });
+
     }
 
     @Override
@@ -39,14 +76,20 @@ public class DataAdapter extends RecyclerView.Adapter<DataAdapter.ViewHolder> {
         return quoteList.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder{
+    public class ViewHolder extends RecyclerView.ViewHolder {
         private TextView tv_country;
         private TextView qt_qu;
+        private Button copy;
+        private Button share;
+
         public ViewHolder(View view) {
             super(view);
-            qt_qu= (TextView) view.findViewById(R.id.qt_qu);
-            tv_country = (TextView)view.findViewById(R.id.tv_country);
+            qt_qu = (TextView) view.findViewById(R.id.qt_qu);
+            tv_country = (TextView) view.findViewById(R.id.tv_country);
+            copy = (Button) view.findViewById(R.id.copy);
+            share = (Button) view.findViewById(R.id.share);
         }
+
     }
 
 }

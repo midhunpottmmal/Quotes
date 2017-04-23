@@ -46,18 +46,18 @@
             >
 
             <Button
-                android:id="@+id/allow"
+                android:id="@+id/copy"
                 android:layout_width="0.0dip"
                 android:layout_height="fill_parent"
                 android:layout_weight="1.0"
                 android:drawableLeft="@drawable/content_copy"
                 android:background="@color/white"
-                android:text="Forward" />
+                android:text="Copy" />
 
 
 
             <Button
-                android:id="@+id/deny"
+                android:id="@+id/share"
                 android:layout_width="0.0dip"
                 android:layout_height="fill_parent"
                 android:drawableLeft="@drawable/share_android"
