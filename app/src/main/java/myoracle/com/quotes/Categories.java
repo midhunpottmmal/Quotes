@@ -12,13 +12,15 @@ public class Categories {
     private int categoryId;
     private String cIcon;
     List<Quote> quoteList;
+    private String genre;
 
 
-    public Categories(String category,int categoryId,List<Quote> quoteList,String cIcon){
+    public Categories(String category,int categoryId,List<Quote> quoteList,String cIcon,String genre){
         this.category=category;
         this.categoryId=categoryId;
         this.quoteList=quoteList;
         this.cIcon=cIcon;
+        this.genre=genre;
     }
 
     public int getCategoryId() {
@@ -51,5 +53,13 @@ public class Categories {
 
     public String getcIcon() {
         return cIcon;
+    }
+
+    public String getGenre() {
+        return genre;
+    }
+
+    public void setGenre(String genre) {
+        this.genre = genre;
     }
 }

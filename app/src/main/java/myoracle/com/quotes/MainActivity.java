@@ -2,11 +2,13 @@ package myoracle.com.quotes;
 
 import android.content.ActivityNotFoundException;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
@@ -76,6 +78,20 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
+    public void onBackPressed() {
+        new AlertDialog.Builder(this)
+                .setMessage("Are you sure you want to exit?")
+                .setCancelable(false)
+                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        MainActivity.this.finish();
+                    }
+                })
+                .setNegativeButton("No", null)
+                .show();
+    }
+
+    @Override
     public boolean onCreateOptionsMenu(Menu menu) {
 
         getMenuInflater().inflate(R.menu.main_menu, menu);
@@ -120,10 +136,17 @@ public class MainActivity extends AppCompatActivity {
                 for (int j = 0; j < quotesJsonArray.length(); j++) {
                     JSONObject quotesObject = quotesJsonArray.getJSONObject(j);
 
-                    Quote quote = new Quote(quotesObject.getString("quote"), quotesObject.getString("quoteauthor"));
+                    Quote quote;
+                    try{
+                        quote = new Quote(quotesObject.getString("quote"),quotesObject.getString("quoteauthor"));
+                    }catch (Exception e){
+                        quote = new Quote(quotesObject.getString("quote"),"");
+                    }
+
                     quoteList.add(quote);
                 }
-                this.categoriesList.add(new Categories(categoriesObj.getString("name"), index, quoteList, categoriesObj.getString("icon")));
+                this.categoriesList.add(new Categories(categoriesObj.getString("name"), index, quoteList,
+                        categoriesObj.getString("icon"),categoriesObj.getString("genre")));
             }
         } catch (JSONException e) {
 

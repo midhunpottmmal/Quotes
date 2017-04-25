@@ -1,13 +1,16 @@
 package myoracle.com.quotes;
 
 import android.content.ActivityNotFoundException;
+import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.GestureDetector;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -28,6 +31,7 @@ public class QuotesCardActivity extends AppCompatActivity {
     private ArrayList countries;
     private Toolbar toolbar;
     RecyclerView recyclerView;
+    private Context applicationContext;
 
 
     @Override
@@ -38,10 +42,11 @@ public class QuotesCardActivity extends AppCompatActivity {
         ArrayList<Quote> quoteList = (ArrayList<Quote>) bundle.get("quotes");
         Collections.shuffle(quoteList);
         setContentView(R.layout.quotes_card_activity);
-
+        this.applicationContext=getApplicationContext();
         toolbar = (Toolbar) findViewById(R.id.main_app_bar);
-        setSupportActionBar(toolbar);
+                setSupportActionBar(toolbar);
         setTitle((String)bundle.get("categoryTitle"));
+
         initViews(quoteList);
 
 

@@ -32,12 +32,13 @@ public class QuotesActivity extends AppCompatActivity {
         Bundle bundle = getIntent().getExtras();
 
         ArrayList<Quote> quoteList = (ArrayList<Quote>) bundle.get("quotes");
+        Integer index = (Integer) bundle.get("index");
         setContentView(R.layout.activity_quotes);
-
+        Toast.makeText(this,"Long Click Copy",Toast.LENGTH_SHORT).show();
         toolbar = (Toolbar) findViewById(R.id.main_app_bar);
         setSupportActionBar(toolbar);
-        this.viewPager= (ViewPager) findViewById(R.id.pager);
-        this.quotesAdapter=new QuotesAdapter(this,quoteList);
+        this.viewPager = (ViewPager) findViewById(R.id.pager);
+        this.quotesAdapter = new QuotesAdapter(this, quoteList,index);
         this.viewPager.setAdapter(quotesAdapter);
 
 
@@ -58,20 +59,14 @@ public class QuotesActivity extends AppCompatActivity {
                 TextView textView = (TextView) findViewById(R.id.quotesview);
                 Intent sendIntent = new Intent();
                 sendIntent.setAction(Intent.ACTION_SEND);
-                sendIntent.putExtra(Intent.EXTRA_TEXT,textView.getText());
+                sendIntent.putExtra(Intent.EXTRA_TEXT, textView.getText());
                 sendIntent.setType("text/plain");
                 Intent.createChooser(sendIntent, "Share via");
                 startActivity(sendIntent);
                 return true;
-            case R.id.action_quote_copy:
 
-//                ClipboardManager clipboard = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
-//                ClipData clip = ClipData.n
-//                clipboard.setPrimaryClip(clip);
-
-                return true;
             case R.id.action_privacy_policy:
-                android.app.FragmentManager fragmentManager =getFragmentManager();
+                android.app.FragmentManager fragmentManager = getFragmentManager();
                 PrivacyDialogFragment privacyDialogFragment = new PrivacyDialogFragment();
                 privacyDialogFragment.show(fragmentManager, "Sample Fragment");
                 return true;

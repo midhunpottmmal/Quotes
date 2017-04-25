@@ -5,6 +5,7 @@
       "order": 1,
       "price": "F",
       "icon":"angry.png",
+      "genre":"Love thou the rose, yet leave it on its stem..",
       "quotes": [
         {
           "quote": "Communication is the solvent of all problems, therefore communication skills are the foundation for personal development.",
@@ -284,6 +285,7 @@
       "name": "CREATIVITY",
       "order": 2,
       "price": "F",
+      "genre":"Creativity is the greatest expression of liberty..",
       "icon":"creative.png",
       "quotes": [
         {
@@ -768,6 +770,7 @@
       "name": "EMOTIONAL INTELLIGENCE",
       "order": 3,
       "price": "F",
+      "genre":"if you have an aim you can move a mountain..",
       "icon":"heartbreak.png",
       "quotes": [
         {
@@ -1004,6 +1007,7 @@
       "name": "FAMOUS PEOPLE",
       "order": 4,
       "price": "F",
+      "genre":"Never mistake activity for achievement..",
       "icon":"examicon.png",
       "quotes": [
         {
@@ -1600,6 +1604,7 @@
       "name": "FUNNY",
       "order": 5,
       "price": "F",
+      "genre":"Behind every great man is a woman rolling eyes..",
       "icon":"funny.png",
       "quotes": [
         {
@@ -1892,6 +1897,7 @@
       "name": "HAPPINESS & WELLBEING",
       "order": 6,
       "price": "F",
+      "genre":"Communal well-being is central to human life...",
       "icon":"wellbeing.png",
       "quotes": [
         {
@@ -2324,6 +2330,7 @@
       "name": "HAPPINESS",
       "order": 7,
       "price": "F",
+      "genre":"Be happy for this moment. This moment is your..",
       "icon":"happy.png",
       "quotes": [
         {
@@ -2736,6 +2743,7 @@
       "name": "INSPIRATIONAL",
       "order": 8,
       "price": "F",
+      "genre":"if you have an aim you can move a mountain..",
       "icon":"angry.png",
       "quotes": [
         {
@@ -4176,6 +4184,7 @@
       "name": "LIFE",
       "order": 9,
       "price": "F",
+      "genre":"A smile is the universal welcome...",
       "icon":"life.png",
       "quotes": [
         {
@@ -4656,6 +4665,7 @@
       "name": "LOVE",
       "order": 10,
       "price": "F",
+      "genre":"The best thing to hold onto in life is each other..",
       "icon":"love.png",
       "quotes": [
         {
@@ -4967,6 +4977,7 @@
     {
       "name": "LUST",
       "order": 11,
+      "genre":"Enjoy all you have while pursuing all you want...",
       "price": "get_lust_quotes",
       "icon":"lust.png",
       "quotes": [
@@ -5336,6 +5347,7 @@
       "name": "MOTIVATION & LEADERSHIP",
       "order": 12,
       "price": "F",
+      "genre":"The art of communication is the language of..",
       "icon":"attitude.png",
       "quotes": [
         {
@@ -5868,6 +5880,7 @@
       "name": "MOTIVATIONAL",
       "order": 13,
       "price": "F",
+      "genre":"if you have an aim you can move a mountain..",
       "icon":"motivate.png",
       "quotes": [
         {
@@ -6312,6 +6325,7 @@
       "name": "PARENTING & EDUCATION",
       "order": 14,
       "price": "F",
+      "genre":"The highest result of education is tolerance..",
       "icon":"examicon.png",
       "quotes": [
         {
@@ -6488,6 +6502,7 @@
       "name": "RANDOM",
       "order": 15,
       "price": "F",
+      "genre":"Listen to your heart. It knows all things...",
       "icon":"angry.png",
       "quotes": [
         {
@@ -7643,6 +7658,7 @@
     {
       "name": "SEX",
       "order": 16,
+      "genre":"I know nothing about sex, because I was always..",
       "price": "com.codeplay.quotes.sex",
       "icon":"sex.png",
       "quotes": [
@@ -7920,6 +7936,7 @@
       "name": "SUCCESS",
       "order": 17,
       "price": "F",
+      "genre":"if you have an aim you can move a mountain..",
       "icon":"angry.png",
       "quotes": [
         {
@@ -8106,10 +8123,7 @@
           "quote": "A pessimist is one who makes difficulties of opportunities. An optimist makes opportunities of so-called difficulties.",
           "quoteauthor": "  "
         },
-        {
-          "quote": "Ships are safe within the harbor, but is that what ships are for?”  "
-        },
-        {
+              {
           "quote": "Action is a great restorer and builder of confidence. Inaction is not only the result, but the cause, of fear. Perhaps the action you take will be successful; perhaps different action or adjustments will have to follow. But any action is better than no action at all.",
           "quoteauthor": "Norman Vincent Peale  "
         },
@@ -8366,6 +8380,7 @@
       "name": "TRAVEL",
       "order": 18,
       "price": "F",
+      "genre":"if you have an aim you can move a mountain..",
       "icon":"angry.png",
       "quotes": [
         {

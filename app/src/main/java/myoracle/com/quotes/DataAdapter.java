@@ -5,6 +5,7 @@ import android.content.ClipboardManager;
 import android.content.Context;
 import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,6 +21,9 @@ import java.util.Collections;
  */
 
 public class DataAdapter extends RecyclerView.Adapter<DataAdapter.ViewHolder> {
+
+    private final Integer WORD_LENGTH =90;
+    private final String MORE =" .....";
     private ArrayList<Quote> quoteList;
     private Context applicationContext;
 
@@ -37,11 +41,11 @@ public class DataAdapter extends RecyclerView.Adapter<DataAdapter.ViewHolder> {
     }
 
     @Override
-    public void onBindViewHolder(DataAdapter.ViewHolder viewHolder, int i) {
+    public void onBindViewHolder(DataAdapter.ViewHolder viewHolder, final int i) {
 
-        viewHolder.tv_country.setText(this.quoteList.get(i).getQuote());
+        viewHolder.tv_country.setText(getPrintText(this.quoteList.get(i).getQuote()));
         viewHolder.qt_qu.setText(this.quoteList.get(i).getAuthor());
-        final String qt = this.quoteList.get(i).getAuthor();
+        final String qt = this.quoteList.get(i).getQuote();
         final String au = this.quoteList.get(i).getAuthor();
         viewHolder.copy.setOnClickListener(new View.OnClickListener() {
 
@@ -62,10 +66,23 @@ public class DataAdapter extends RecyclerView.Adapter<DataAdapter.ViewHolder> {
             public void onClick(View v) {
                 Intent sendIntent = new Intent();
                 sendIntent.setAction(Intent.ACTION_SEND);
+                Log.w("string selected",qt);
                 sendIntent.putExtra(Intent.EXTRA_TEXT,qt);
                 sendIntent.setType("text/plain");
                 Intent.createChooser(sendIntent, "Share via");
-                applicationContext.startActivity(sendIntent);
+                v.getContext().startActivity(sendIntent);
+
+            }
+        });
+
+        viewHolder.tv_country.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent sendIntent = new Intent( v.getContext(), QuotesActivity.class);
+                sendIntent.putExtra("quotes",quoteList);
+                sendIntent.putExtra("index",i);
+
+                v.getContext().startActivity(sendIntent);
             }
         });
 
@@ -74,6 +91,16 @@ public class DataAdapter extends RecyclerView.Adapter<DataAdapter.ViewHolder> {
     @Override
     public int getItemCount() {
         return quoteList.size();
+    }
+
+    public String getPrintText(String quote) {
+        if(quote.length()>=WORD_LENGTH){
+            return  quote.substring(0, Math.min(quote.length(),90))+MORE;
+        }else {
+            return quote;
+        }
+
+
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {

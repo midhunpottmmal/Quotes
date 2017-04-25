@@ -35,7 +35,7 @@ public class CategoriesAdapter extends RecyclerView.Adapter<CategoriesAdapter.My
         Categories categories = categoriesList.get(position);
 
           holder.categories.setText(categories.getCategory());
-          holder.genre.setText("if you have an aim you can move a mountain..");
+          holder.genre.setText(categories.getGenre());
 
           holder.qIcon.setBackgroundResource(getIconIds(categories.getcIcon()));
     }
