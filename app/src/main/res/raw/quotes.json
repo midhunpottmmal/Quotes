@@ -4,7 +4,7 @@
       "name": "COMMUNICATION & RELATIONSHIPS",
       "order": 1,
       "price": "F",
-      "icon":"angry.png",
+      "icon":"thinking.png",
       "genre":"Love thou the rose, yet leave it on its stem..",
       "quotes": [
         {
@@ -1008,7 +1008,7 @@
       "order": 4,
       "price": "F",
       "genre":"Never mistake activity for achievement..",
-      "icon":"examicon.png",
+      "icon":"famous.png",
       "quotes": [
         {
           "quote": "When we have inner peace, we can be at peace with those around us. When our community is in a state of peace, it can share that peace with neighbouring communities.",
@@ -2744,7 +2744,7 @@
       "order": 8,
       "price": "F",
       "genre":"if you have an aim you can move a mountain..",
-      "icon":"angry.png",
+      "icon":"gentleman.png",
       "quotes": [
         {
           "quote": "Your time is limited, so don’t waste it living someone else’s life.",
@@ -5348,7 +5348,7 @@
       "order": 12,
       "price": "F",
       "genre":"The art of communication is the language of..",
-      "icon":"attitude.png",
+      "icon":"superhero.png",
       "quotes": [
         {
           "quote": "Courage is not the absence of fear, but rather the judgment that something else is more important than fear.",
@@ -6503,7 +6503,7 @@
       "order": 15,
       "price": "F",
       "genre":"Listen to your heart. It knows all things...",
-      "icon":"angry.png",
+      "icon":"smoked.png",
       "quotes": [
         {
           "quote": "Hard work pays off in the future. Laziness pays off now.",
@@ -7937,7 +7937,7 @@
       "order": 17,
       "price": "F",
       "genre":"if you have an aim you can move a mountain..",
-      "icon":"angry.png",
+      "icon":"rich.png",
       "quotes": [
         {
           "quote": "Enjoy the little things, for one day you may look back and realize they were the big things.",
@@ -8381,7 +8381,7 @@
       "order": 18,
       "price": "F",
       "genre":"if you have an aim you can move a mountain..",
-      "icon":"angry.png",
+      "icon":"listening.png",
       "quotes": [
         {
           "quote": " Twenty years from now you will be more disappointed by the things that you didn’t do than by the ones you did do. So throw off the bowlines. Sail away from the safe harbor. Catch the trade winds in your sails. Explore. Dream. Discover.",

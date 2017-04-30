@@ -75,7 +75,20 @@ public class CategoriesAdapter extends RecyclerView.Adapter<CategoriesAdapter.My
             image = R.drawable.motivate;
         else if(imageName.toString().equals("attitude.png"))
             image = R.drawable.attitude;
-
+        else if(imageName.toString().equals("famous.png"))
+            image = R.drawable.famous;
+        else if(imageName.toString().equals("smoked.png"))
+            image = R.drawable.smoked;
+        else if(imageName.toString().equals("rich.png"))
+            image = R.drawable.rich;
+        else if(imageName.toString().equals("superhero.png"))
+            image = R.drawable.superhero;
+        else if(imageName.toString().equals("thinking.png"))
+            image = R.drawable.thinking;
+        else if(imageName.toString().equals("gentleman.png"))
+            image = R.drawable.gentleman;
+        else if(imageName.toString().equals("listening.png"))
+            image = R.drawable.listening;
         return image;
     }
 
