@@ -2,6 +2,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="myoracle.com.quotes">
 
+    <uses-permission android:name="com.android.alarm.permission.SET_ALARM"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+
+
     <application
         android:allowBackup="true"
         android:icon="@drawable/logo"
@@ -21,11 +26,16 @@
 
         </activity>
         <activity
-               android:name=".QuotesActivity" >
+               android:name=".QuotesActivity" android:parentActivityName=".QuotesCardActivity">
         </activity>
         <activity
-            android:name=".QuotesCardActivity" >
+            android:name=".QuotesCardActivity" android:parentActivityName=".MainActivity" >
         </activity>
+
+
+        <receiver android:name=".NotificationReciver" />
     </application>
+
+
 
 </manifest>

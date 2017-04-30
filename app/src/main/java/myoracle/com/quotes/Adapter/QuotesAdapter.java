@@ -1,4 +1,4 @@
-package myoracle.com.quotes;
+package myoracle.com.quotes.Adapter;
 
 import android.content.ClipData;
 import android.content.ClipboardManager;
@@ -13,6 +13,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+
+import myoracle.com.quotes.Quote;
+import myoracle.com.quotes.R;
 
 import static myoracle.com.quotes.R.raw.quotes;
 

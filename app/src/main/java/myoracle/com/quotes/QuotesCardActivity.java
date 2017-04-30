@@ -3,14 +3,14 @@ package myoracle.com.quotes;
 import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Color;
+
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
+
 import android.view.GestureDetector;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -18,9 +18,10 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Toast;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collections;
+
+import myoracle.com.quotes.Adapter.DataAdapter;
 
 /**
  * Created by Midhun on 22-04-2017.
@@ -47,6 +48,8 @@ public class QuotesCardActivity extends AppCompatActivity {
                 setSupportActionBar(toolbar);
         setTitle((String)bundle.get("categoryTitle"));
 
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
         initViews(quoteList);
 
 
@@ -118,9 +121,10 @@ public class QuotesCardActivity extends AppCompatActivity {
                 Intent.createChooser(sendIntent, "Share via");
                 startActivity(sendIntent);
                 return true;
-            case R.id.action_rate_us:
-                launchMarket();
+            case R.id.parent:
+                Toast.makeText(getApplicationContext(),"Please share this app with 3 contacts help us to grow :)", Toast.LENGTH_SHORT).show();
                 return true;
+
             case R.id.action_privacy_policy:
                 android.app.FragmentManager fragmentManager =getFragmentManager();
                 PrivacyDialogFragment privacyDialogFragment = new PrivacyDialogFragment();

@@ -1,20 +1,19 @@
 package myoracle.com.quotes;
 
+import android.app.AlarmManager;
+import android.app.PendingIntent;
 import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -28,7 +27,10 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
+
+import myoracle.com.quotes.Adapter.CategoriesAdapter;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -74,8 +76,23 @@ public class MainActivity extends AppCompatActivity {
             }
         }));
 
+
         createCategoryList();
+        InvokeAlaram();
     }
+
+    private void InvokeAlaram() {
+
+        Calendar calendar = Calendar.getInstance();
+        calendar.set(Calendar.HOUR_OF_DAY,12);
+        calendar.set(Calendar.MINUTE,48);
+        calendar.set(Calendar.SECOND,30);
+        Intent intent = new Intent(getApplicationContext(), NotificationReciver.class);
+        PendingIntent pendingIntent = PendingIntent.getBroadcast(getApplicationContext(), 100, intent, PendingIntent.FLAG_UPDATE_CURRENT);
+        AlarmManager alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
+        alarmManager.setRepeating(AlarmManager.RTC_WAKEUP,calendar.getTimeInMillis(),AlarmManager.INTERVAL_DAY,pendingIntent);
+    }
+
 
     @Override
     public void onBackPressed() {
@@ -102,7 +119,7 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.action_share:
-                Toast.makeText(getApplicationContext(),"Please share this app with 3 contacts help us to grow :)", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "Please share this app with 3 contacts help us to grow :)", Toast.LENGTH_SHORT).show();
 
                 Intent sendIntent = new Intent();
                 sendIntent.setAction(Intent.ACTION_SEND);
@@ -115,7 +132,7 @@ public class MainActivity extends AppCompatActivity {
                 launchMarket();
                 return true;
             case R.id.action_privacy_policy:
-                android.app.FragmentManager fragmentManager =getFragmentManager();
+                android.app.FragmentManager fragmentManager = getFragmentManager();
                 PrivacyDialogFragment privacyDialogFragment = new PrivacyDialogFragment();
                 privacyDialogFragment.show(fragmentManager, "Sample Fragment");
                 return true;
@@ -137,16 +154,16 @@ public class MainActivity extends AppCompatActivity {
                     JSONObject quotesObject = quotesJsonArray.getJSONObject(j);
 
                     Quote quote;
-                    try{
-                        quote = new Quote(quotesObject.getString("quote"),quotesObject.getString("quoteauthor"));
-                    }catch (Exception e){
-                        quote = new Quote(quotesObject.getString("quote"),"");
+                    try {
+                        quote = new Quote(quotesObject.getString("quote"), quotesObject.getString("quoteauthor"));
+                    } catch (Exception e) {
+                        quote = new Quote(quotesObject.getString("quote"), "");
                     }
 
                     quoteList.add(quote);
                 }
                 this.categoriesList.add(new Categories(categoriesObj.getString("name"), index, quoteList,
-                        categoriesObj.getString("icon"),categoriesObj.getString("genre")));
+                        categoriesObj.getString("icon"), categoriesObj.getString("genre")));
             }
         } catch (JSONException e) {
 

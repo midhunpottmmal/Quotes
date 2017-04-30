@@ -1,8 +1,5 @@
 package myoracle.com.quotes;
 
-import android.content.ClipData;
-import android.content.ClipboardManager;
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
@@ -14,7 +11,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
-import java.util.List;
+
+import myoracle.com.quotes.Adapter.QuotesAdapter;
 
 /**
  * Created by Midhun on 19-04-2017.
@@ -40,7 +38,6 @@ public class QuotesActivity extends AppCompatActivity {
         this.viewPager = (ViewPager) findViewById(R.id.pager);
         this.quotesAdapter = new QuotesAdapter(this, quoteList,index);
         this.viewPager.setAdapter(quotesAdapter);
-
 
     }
 
