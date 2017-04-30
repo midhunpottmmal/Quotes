@@ -1,4 +1,4 @@
-package myoracle.com.quotes;
+package myoracle.com.quotes.listener;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;

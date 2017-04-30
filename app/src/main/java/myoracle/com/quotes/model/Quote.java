@@ -1,4 +1,4 @@
-package myoracle.com.quotes;
+package myoracle.com.quotes.model;
 
 import java.io.Serializable;
 

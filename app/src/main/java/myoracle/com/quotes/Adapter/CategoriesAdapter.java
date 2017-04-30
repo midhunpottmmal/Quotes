@@ -1,4 +1,4 @@
-package myoracle.com.quotes.Adapter;
+package myoracle.com.quotes.adapter;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -8,7 +8,7 @@ import android.widget.TextView;
 
 import java.util.List;
 
-import myoracle.com.quotes.Categories;
+import myoracle.com.quotes.model.Categories;
 import myoracle.com.quotes.R;
 
 /**

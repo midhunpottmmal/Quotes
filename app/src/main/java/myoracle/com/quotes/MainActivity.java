@@ -30,7 +30,11 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
-import myoracle.com.quotes.Adapter.CategoriesAdapter;
+import myoracle.com.quotes.adapter.CategoriesAdapter;
+import myoracle.com.quotes.notification_receiver.Notificationreceiver;
+import myoracle.com.quotes.listener.RecyclerTouchListener;
+import myoracle.com.quotes.model.Categories;
+import myoracle.com.quotes.model.Quote;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -87,7 +91,7 @@ public class MainActivity extends AppCompatActivity {
         calendar.set(Calendar.HOUR_OF_DAY,12);
         calendar.set(Calendar.MINUTE,48);
         calendar.set(Calendar.SECOND,30);
-        Intent intent = new Intent(getApplicationContext(), NotificationReciver.class);
+        Intent intent = new Intent(getApplicationContext(), Notificationreceiver.class);
         PendingIntent pendingIntent = PendingIntent.getBroadcast(getApplicationContext(), 100, intent, PendingIntent.FLAG_UPDATE_CURRENT);
         AlarmManager alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
         alarmManager.setRepeating(AlarmManager.RTC_WAKEUP,calendar.getTimeInMillis(),AlarmManager.INTERVAL_DAY,pendingIntent);

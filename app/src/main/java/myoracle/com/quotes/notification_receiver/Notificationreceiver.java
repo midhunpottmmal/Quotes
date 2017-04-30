@@ -1,4 +1,4 @@
-package myoracle.com.quotes;
+package myoracle.com.quotes.notification_receiver;
 
 import android.app.NotificationManager;
 import android.app.PendingIntent;
@@ -7,11 +7,14 @@ import android.content.Context;
 import android.content.Intent;
 import android.support.v4.app.NotificationCompat;
 
+import myoracle.com.quotes.MainActivity;
+import myoracle.com.quotes.R;
+
 /**
  * Created by Midhun on 26-04-2017.
  */
 
-public class NotificationReciver extends BroadcastReceiver{
+public class Notificationreceiver extends BroadcastReceiver{
     @Override
     public void onReceive(Context context, Intent intent) {
         NotificationManager notificationManager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);

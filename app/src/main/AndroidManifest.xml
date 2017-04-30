@@ -33,7 +33,7 @@
         </activity>
 
 
-        <receiver android:name=".NotificationReciver" />
+        <receiver android:name=".notification_receiver.Notificationreceiver" />
     </application>
 
 

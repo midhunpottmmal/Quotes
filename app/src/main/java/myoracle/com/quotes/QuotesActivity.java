@@ -12,7 +12,8 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
-import myoracle.com.quotes.Adapter.QuotesAdapter;
+import myoracle.com.quotes.adapter.QuotesAdapter;
+import myoracle.com.quotes.model.Quote;
 
 /**
  * Created by Midhun on 19-04-2017.

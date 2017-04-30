@@ -1,4 +1,4 @@
-package myoracle.com.quotes;
+package myoracle.com.quotes.model;
 
 /**
  * Created by Midhun on 19-04-2017.

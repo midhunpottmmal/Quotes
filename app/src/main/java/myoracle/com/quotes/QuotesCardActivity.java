@@ -21,7 +21,8 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.Collections;
 
-import myoracle.com.quotes.Adapter.DataAdapter;
+import myoracle.com.quotes.adapter.DataAdapter;
+import myoracle.com.quotes.model.Quote;
 
 /**
  * Created by Midhun on 22-04-2017.

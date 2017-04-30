@@ -1,4 +1,4 @@
-package myoracle.com.quotes.Adapter;
+package myoracle.com.quotes.adapter;
 
 import android.content.ClipData;
 import android.content.ClipboardManager;
@@ -15,7 +15,7 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
-import myoracle.com.quotes.Quote;
+import myoracle.com.quotes.model.Quote;
 import myoracle.com.quotes.QuotesActivity;
 import myoracle.com.quotes.R;
 
