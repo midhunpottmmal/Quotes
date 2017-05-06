@@ -14,9 +14,11 @@ import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.text.Html;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import org.json.JSONArray;
@@ -82,7 +84,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         createCategoryList();
-        InvokeAlaram();
+       // InvokeAlaram();
     }
 
     private void InvokeAlaram() {
@@ -127,7 +129,7 @@ public class MainActivity extends AppCompatActivity {
 
                 Intent sendIntent = new Intent();
                 sendIntent.setAction(Intent.ACTION_SEND);
-                sendIntent.putExtra(Intent.EXTRA_TEXT, "Hai");
+                sendIntent.putExtra(Intent.EXTRA_TEXT, "More than 30000 Selected Quotes Download Now : https://play.google.com/store/apps/details?id=myoracle.com.quotes");
                 sendIntent.setType("text/plain");
                 Intent.createChooser(sendIntent, "Share via");
                 startActivity(sendIntent);
@@ -135,11 +137,7 @@ public class MainActivity extends AppCompatActivity {
             case R.id.action_rate_us:
                 launchMarket();
                 return true;
-            case R.id.action_privacy_policy:
-                android.app.FragmentManager fragmentManager = getFragmentManager();
-                PrivacyDialogFragment privacyDialogFragment = new PrivacyDialogFragment();
-                privacyDialogFragment.show(fragmentManager, "Sample Fragment");
-                return true;
+
         }
         return super.onOptionsItemSelected(item);
     }

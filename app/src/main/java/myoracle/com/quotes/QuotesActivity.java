@@ -63,11 +63,6 @@ public class QuotesActivity extends AppCompatActivity {
                 startActivity(sendIntent);
                 return true;
 
-            case R.id.action_privacy_policy:
-                android.app.FragmentManager fragmentManager = getFragmentManager();
-                PrivacyDialogFragment privacyDialogFragment = new PrivacyDialogFragment();
-                privacyDialogFragment.show(fragmentManager, "Sample Fragment");
-                return true;
         }
         return super.onOptionsItemSelected(item);
     }

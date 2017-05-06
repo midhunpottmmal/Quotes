@@ -117,7 +117,8 @@ public class QuotesCardActivity extends AppCompatActivity {
 
                 Intent sendIntent = new Intent();
                 sendIntent.setAction(Intent.ACTION_SEND);
-                sendIntent.putExtra(Intent.EXTRA_TEXT, "Hai");
+                sendIntent.putExtra(Intent.EXTRA_TEXT, "More than 30000 Selected Quotes Download Now : https://play.google.com/store/apps/details?id=myoracle.com.quotes");
+
                 sendIntent.setType("text/plain");
                 Intent.createChooser(sendIntent, "Share via");
                 startActivity(sendIntent);
@@ -126,11 +127,7 @@ public class QuotesCardActivity extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(),"Please share this app with 3 contacts help us to grow :)", Toast.LENGTH_SHORT).show();
                 return true;
 
-            case R.id.action_privacy_policy:
-                android.app.FragmentManager fragmentManager =getFragmentManager();
-                PrivacyDialogFragment privacyDialogFragment = new PrivacyDialogFragment();
-                privacyDialogFragment.show(fragmentManager, "Sample Fragment");
-                return true;
+
         }
         return super.onOptionsItemSelected(item);
     }

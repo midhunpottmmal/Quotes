@@ -44,6 +44,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/qt_qu"
             android:orientation="horizontal"
+            android:background="@color/white"
             >
 
             <Button

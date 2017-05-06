@@ -2,8 +2,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="10dp"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:padding="10dp">
 
     <ImageView
         android:id="@+id/image"
@@ -12,23 +12,22 @@
         android:src="@drawable/examicon" />
 
     <TextView
-        android:id="@+id/title"
+        android:id="@+id/privacy_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="In the above code, the onCreateView() method is expected to return the instance of view that represent the view hierarchy for your dialog. The instance of layout inflater can be used to inflate the layout for the fragment. ViewGroup represents the parent view where the fragment to be attached, and the Bundle param is the saved bundle data if available to restore the fragment to previous state.."
+        android:text="sdafa dfsdafsef"
         android:textSize="20dp" />
 
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        >
+        android:layout_height="wrap_content">
 
         <Button
             android:id="@+id/privacy_dismiss"
             android:layout_width="match_parent"
-            android:layout_alignParentLeft="true"
             android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
             android:text="Dismiss" />
 
     </LinearLayout>

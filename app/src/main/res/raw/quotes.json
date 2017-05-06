@@ -285,7 +285,7 @@
       "name": "CREATIVITY",
       "order": 2,
       "price": "F",
-      "genre":"Creativity is the greatest expression of liberty..",
+      "genre":"Creativity is the greatest expression of liber..",
       "icon":"creative.png",
       "quotes": [
         {
@@ -1604,7 +1604,7 @@
       "name": "FUNNY",
       "order": 5,
       "price": "F",
-      "genre":"Behind every great man is a woman rolling eyes..",
+      "genre":"Behind every great man is a woman rolling ey..",
       "icon":"funny.png",
       "quotes": [
         {
@@ -2330,7 +2330,7 @@
       "name": "HAPPINESS",
       "order": 7,
       "price": "F",
-      "genre":"Be happy for this moment. This moment is your..",
+      "genre":"Be happy for this moment. This moment is yo..",
       "icon":"happy.png",
       "quotes": [
         {
@@ -4665,7 +4665,7 @@
       "name": "LOVE",
       "order": 10,
       "price": "F",
-      "genre":"The best thing to hold onto in life is each other..",
+      "genre":"The best thing to hold onto in life is each othe..",
       "icon":"love.png",
       "quotes": [
         {
@@ -7658,7 +7658,7 @@
     {
       "name": "SEX",
       "order": 16,
-      "genre":"I know nothing about sex, because I was always..",
+      "genre":"I know nothing about sex, because I was alwa..",
       "price": "com.codeplay.quotes.sex",
       "icon":"sex.png",
       "quotes": [

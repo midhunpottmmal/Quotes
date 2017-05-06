@@ -7,6 +7,9 @@ import android.content.Context;
 import android.content.Intent;
 import android.support.v4.app.NotificationCompat;
 
+import java.io.IOException;
+import java.io.InputStream;
+
 import myoracle.com.quotes.MainActivity;
 import myoracle.com.quotes.R;
 
@@ -33,4 +36,12 @@ public class Notificationreceiver extends BroadcastReceiver{
         notificationManager.notify(100,notificationBuilder.build());
 
     }
+
+
+
+
+
+
+
+
 }

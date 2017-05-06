@@ -17,10 +17,6 @@
         android:id="@+id/action_rate_us"
         android:orderInCategory="100"
         android:title="Rate app on Google Play"/>
-    <item
-        android:id="@+id/action_privacy_policy"
-        android:orderInCategory="100"
-        android:title="Privacy Policy"/>
 
 
 
