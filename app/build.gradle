@@ -7,10 +7,10 @@ android {
         applicationId "myoracle.com.quotes"
         minSdkVersion 15
         targetSdkVersion 25
-        versionCode 1
-        versionName "0.10"
+        versionCode 3
+        versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-        versionNameSuffix 'demo'
+
     }
     buildTypes {
         release {

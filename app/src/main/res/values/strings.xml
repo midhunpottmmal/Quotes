@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Quotes</string>
+    <string name="app_name">Status &amp; Quotes</string>
     <string name="privacy_policy"><![CDATA[
 <p>This is a html-formatted string with <b>bold</b> and <i>italic</i> text</p>
 <p>This is another paragraph of the same string.</p>

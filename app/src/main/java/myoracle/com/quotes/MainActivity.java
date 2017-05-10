@@ -129,7 +129,7 @@ public class MainActivity extends AppCompatActivity {
 
                 Intent sendIntent = new Intent();
                 sendIntent.setAction(Intent.ACTION_SEND);
-                sendIntent.putExtra(Intent.EXTRA_TEXT, "More than 30000 Selected Quotes Download Now : https://play.google.com/store/apps/details?id=myoracle.com.quotes");
+                sendIntent.putExtra(Intent.EXTRA_TEXT, "More than 3000 Selected Quotes Download Now : https://play.google.com/store/apps/details?id=myoracle.com.quotes");
                 sendIntent.setType("text/plain");
                 Intent.createChooser(sendIntent, "Share via");
                 startActivity(sendIntent);
