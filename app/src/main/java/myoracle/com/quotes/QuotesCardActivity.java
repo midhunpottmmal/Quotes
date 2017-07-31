@@ -18,6 +18,9 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Toast;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+
 import java.util.ArrayList;
 import java.util.Collections;
 
@@ -38,7 +41,11 @@ public class QuotesCardActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+
         super.onCreate(savedInstanceState);
+
+
 
         Bundle bundle = getIntent().getExtras();
         ArrayList<Quote> quoteList = (ArrayList<Quote>) bundle.get("quotes");
@@ -49,10 +56,11 @@ public class QuotesCardActivity extends AppCompatActivity {
                 setSupportActionBar(toolbar);
         setTitle((String)bundle.get("categoryTitle"));
 
+
+
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         initViews(quoteList);
-
 
     }
 

@@ -1,7 +1,12 @@
 <resources>
     <string name="app_name">Status &amp; Quotes</string>
+    <string name="banner_ad_unit_id">ca-app-pub-8629047556008369/7518362536</string>
+    <string name="banner_ad_unit_id_2">ca-app-pub-8629047556008369/1901956801</string>
+    <string name="admob_interstitial_id">ca-app-pub-8629047556008369/2682354305</string>
+
     <string name="privacy_policy"><![CDATA[
 <p>This is a html-formatted string with <b>bold</b> and <i>italic</i> text</p>
 <p>This is another paragraph of the same string.</p>
 ]]></string>
 </resources>
+
