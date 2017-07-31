@@ -10,6 +10,9 @@ import android.view.MenuItem;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+
 import java.util.ArrayList;
 
 import myoracle.com.quotes.adapter.QuotesAdapter;
@@ -39,6 +42,10 @@ public class QuotesActivity extends AppCompatActivity {
         this.viewPager = (ViewPager) findViewById(R.id.pager);
         this.quotesAdapter = new QuotesAdapter(this, quoteList,index);
         this.viewPager.setAdapter(quotesAdapter);
+
+        AdView mAdView = (AdView) findViewById(R.id.adView3);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
 
     }
 
